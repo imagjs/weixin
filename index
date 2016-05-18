@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<imag>
+    <script>
+        <![CDATA[
+			var array = [{icon:"http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon2.jpg",name:"张三"},{icon:"http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon4.jpg",name:"李四"},{icon:"http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon5.jpg",name:"王五"},{icon:"http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon3.jpg",name:"赵六"},{icon:"http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon2.jpg",name:"晶晶"},{icon:"http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon3.jpg",name:"三天"},{icon:"http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon4.jpg",name:"七"},{icon:"http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon1.jpg",name:"阿基米花"},{icon:"http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon1.jpg",name:"花花"}];
+			
+			function initList() {
+				var listJson = {items:[]};
+				for (var i = 0; i < array.length; i++) {
+					var itemJson = {
+						template:0,
+						sortlabel: array[i].name,
+						widgets:{
+							name:{text:array[i].name},
+							icon:{src:array[i].icon}
+						}
+					}
+					listJson.items.push(itemJson);
+				}
+				listJson.items.push({template:2,sortlabel:"*1",widgets:{
+							name:{text:"新的朋友"},
+							icon:{src:"newFriend.png"}
+						}});
+				listJson.items.push({template:2,sortlabel:"*2",widgets:{
+							name:{text:"群聊"},
+							icon:{src:"group.png"}
+						}});
+				listJson.items.push({template:2,sortlabel:"*3",widgets:{
+							name:{text:"标签"},
+							icon:{src:"tag.png"}
+						}});
+				listJson.items.push({template:2,sortlabel:"*4",widgets:{
+							name:{text:"公众号"},
+							icon:{src:"office.png"}
+						}});
+				$('list').update(listJson);
+			}
+			 
+			$page.onload = function() {
+				initList();
+			}
+		]]>
+    </script>   
+    <page style="background:white">
+        <tabs style="background:#fcfcfc;" scrollable="true">
+        	<tab label="微信" icon="tab_chat_unSelect.png,tab_chat_select.png" style="label-color:#8f8f8f,#46be1e">
+                <title style="background:#373b3e;padding:0 5">
+                    <left>
+                        <label style="color:#ffffff">微信</label>
+                    </left>
+                    <right>
+                        <icon src="search.png" style="margin:0 10;"/>
+                        <icon src="add.png" style="margin:0 10"/>
+                    </right>
+                </title>
+                <content style="background:#ffffff;">
+                    <list type="transparent">
+                        <item style="col-width:50,*,40;margin:5;col-valign:top,top,top">
+                            <col><row><img style="width:45;height:45;" src="http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon1.jpg"/></row></col>
+                            <col>
+                                <row><label>阿基米花</label></row>
+                                <row><label style="color:#999999;font-size:14;">你在干啥？</label></row>
+                            </col>
+                            <col>
+                                <row><label style="font-size:12;color:#999999">09:30</label></row>
+                                <row><icon/></row>
+                            </col>
+                        </item>
+						<item style="padding:0;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item>
+                        <item style="col-width:50,*,40;margin:5;col-valign:top,top,top">
+                            <col><row><img style="width:45;height:45;" src="http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon2.jpg"/></row></col>
+                            <col>
+                                <row><label>米花阿基</label></row>
+                                <row><label style="color:#999999;font-size:14;">你猜呀。</label></row>
+                            </col>
+                            <col>
+                                <row><label style="font-size:12;color:#999999">08:30</label></row>
+                                <row><icon/></row>
+                            </col>
+                        </item>
+						<item style="padding:0;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item>
+                        <item style="col-width:50,*,40;margin:5;col-valign:top,top,top">
+                            <col><row><img style="width:45;height:45;" src="http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon3.jpg"/></row></col>
+                            <col>
+                                <row><label>基米花阿</label></row>
+                                <row><label style="color:#999999;font-size:14;">你猜我猜不猜。</label></row>
+                            </col>
+                            <col>
+                                <row><label style="font-size:12;color:#999999">08:20</label></row>
+                                <row><icon/></row>
+                            </col>
+                        </item>
+						<item style="padding:0;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item>
+                        <item style="col-width:50,*,40;margin:5;col-valign:top,top,top">
+                            <col><row><img style="width:45;height:45;" src="http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon4.jpg"/></row></col>
+                            <col>
+                                <row><label>花阿基米</label></row>
+                                <row><label style="color:#999999;font-size:14;">哦，不猜。</label></row>
+                            </col>
+                            <col>
+                                <row><label style="font-size:12;color:#999999">07:30</label></row>
+                                <row><icon/></row>
+                            </col>
+                        </item>
+						<item style="padding:0;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item>
+                    </list>
+                </content>
+				<footer><list type="transparent"><item style="padding:0;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item></list></footer>
+            </tab>
+            <tab label="通讯录" icon="tab_contacts_unSelect.png,tab_contacts_select.png" style="label-color:#8f8f8f,#46be1e">
+                <title style="background:#373b3e;padding:0 5">
+                    <left>
+                        <label style="color:#ffffff">微信</label>
+                    </left>
+                    <right>
+                        <icon src="search.png" style="margin:0 10;"/>
+                        <icon src="add.png" style="margin:0 10"/>
+                    </right>
+                </title>
+                <content>
+                    <list id="list" style="background:#ffffff;" reuse="sort" type="transparent">
+                        <item style="col-width:55,*;margin:0 10;padding:5 0;divider-border:1 #e0e0e0">
+                            <col><row><img style="width:35;height:35;" reusekey="icon"/></row></col>
+                            <col><row><label reusekey="name"></label></row></col>
+                        </item>
+						<item style="padding:0;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item>
+						<item style="col-width:55,*;margin:0 10;padding:5 0;divider-border:1 #e0e0e0">
+                            <col><row><icon style="width:35;height:35;margin:0;padding:0;" reusekey="icon"/></row></col>
+                            <col><row><label reusekey="name"></label></row></col>
+                        </item>
+                    </list>
+                </content>
+				<footer><list type="transparent"><item style="padding:0;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item></list></footer>
+            </tab>
+            <tab label="发现" icon="tab_discover_unSelect.png,tab_discover_select.png" style="label-color:#8f8f8f,#46be1e">
+                <title style="background:#373b3e;padding:0 5">
+                    <left>
+                        <label style="color:#ffffff">微信</label>
+                    </left>
+                    <right>
+                        <icon src="search.png" style="margin:0 10;"/>
+                        <icon src="add.png" style="margin:0 10"/>
+                    </right>
+                </title>
+                <content>
+					<list style="margin:20 0;padding:0 5;background:#ffffff;" type="transparent">
+                        <item style="margin:12;padding:0;col-width:40,*;">
+                            <col><row><icon src="friend.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">朋友圈</label></row></col>
+                        </item>
+                    </list>
+					<list style="margin:10 0;padding:0 5;background:#ffffff;" type="transparent">
+                        <item style="margin:12;padding:0;col-width:40,*;">
+                            <col><row><icon src="scan.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">扫一扫</label></row></col>
+                        </item>
+						<item style="padding:0 12;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item>
+                        <item style="margin:12;padding:0;col-width:40,*">
+                            <col><row><icon src="shake.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">摇一摇</label></row></col>
+                        </item> 
+                    </list>
+					<list style="margin:10 0;padding:0 5;background:#ffffff;" type="transparent">
+                        <item style="margin:12;padding:0;col-width:40,*;">
+                            <col><row><icon src="around.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">附近的人</label></row></col>
+                        </item>
+						<item style="padding:0 12;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item>
+                        <item style="margin:12;padding:0;col-width:40,*">
+                            <col><row><icon src="bottle.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">漂流瓶</label></row></col>
+                        </item> 
+                    </list>
+					<list style="margin:10 0;padding:0 5;background:#ffffff;" type="transparent">
+                        <item style="margin:12;padding:0;col-width:40,*;">
+                            <col><row><icon src="shop.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">购物</label></row></col>
+                        </item>
+						<item style="padding:0 12;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item>
+                        <item style="margin:12;padding:0;col-width:40,*">
+                            <col><row><icon src="game.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">游戏</label></row></col>
+                        </item> 
+                    </list>
+                </content>
+				<footer><list type="transparent"><item style="padding:0;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item></list></footer>
+            </tab>
+            <tab label="我" icon="tab_me_unSelect.png,tab_me_select.png" style="label-color:#8f8f8f,#46be1e">
+                <title style="background:#373b3e;padding:0 5">
+                    <left>
+                        <label style="color:#ffffff">微信</label>
+                    </left>
+                    <right>
+                        <icon src="search.png" style="margin:0 10;"/>
+                        <icon src="add.png" style="margin:0 10"/>
+                    </right>
+                </title>
+                <content style="background:#ebebeb;">
+                    <list style="margin:20 0 10;background:#ffffff;" type="transparent">
+                        <item style="col-width:85,*,40">
+                        	<col><row><img style="height:60;width:60;margin:0 8" src="http://www.imagapp.com/project/imag/imag-douglasDemo/images/icon2.jpg"></img></row></col>
+                            <col>
+                                <row><label>阿基米花、</label></row>
+                                <row><label style="font-size:12;color:#999999">ID:d25897</label></row>
+                            </col>
+                            <col><row><icon src="qrcode.png"></icon></row></col>
+                        </item>
+                    </list>
+                    <list style="margin:10 0;padding:0 5;background:#ffffff;" type="transparent">
+                        <item style="margin:12;padding:0;col-width:40,*;">
+                            <col><row><icon src="posts.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">相册</label></row></col>
+                        </item>
+						<item style="padding:0 12;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item>
+                        <item style="margin:12;padding:0;col-width:40,*">
+                            <col><row><icon src="favorites.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">收藏</label></row></col>
+                        </item> 
+                    </list>
+					<list style="margin:10 0;padding:0 5;background:#ffffff;" type="transparent">
+                        <item style="margin:12;padding:0;col-width:40,*;">
+                            <col><row><icon src="wallet.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">钱包</label></row></col>
+                        </item>
+						<item style="padding:0 12;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item>
+                        <item style="margin:12;padding:0;col-width:40,*">
+                            <col><row><icon src="card.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">卡券</label></row></col>
+                        </item> 
+                    </list>
+					<list style="margin:10 0;padding:0 5;background:#ffffff;" type="transparent">
+                        <item style="margin:12;padding:0;col-width:40,*">
+                            <col><row><icon src="face.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">表情</label></row></col>
+                        </item> 
+                    </list>                    
+                    <list style="margin:10 0;padding:0 5;background:#ffffff;" type="transparent">
+                        <item style="margin:12;padding:0;col-width:40,*">
+                            <col><row><icon src="setting.png" style="align:center;"></icon></row></col>
+                            <col><row><label style="margin-left:15;">设置</label></row></col>
+                        </item> 
+                    </list>
+                </content>
+				<footer><list type="transparent"><item style="padding:0;"><col><row style="height:2px;background:#e0e0e0;"></row></col></item></list></footer>
+            </tab>
+        </tabs>
+   </page>
+</imag>
